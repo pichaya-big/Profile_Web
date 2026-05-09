@@ -58,7 +58,7 @@ export default function Hero() {
         <div className="flex flex-col gap-6 animate-fade-up">
           {/* Label */}
           <span className="label-caps text-primary inline-flex items-center gap-2">
-            <span className="w-6 h-px bg-primary" aria-hidden="true"></span>
+            {/* <span className="w-6 h-px bg-primary" aria-hidden="true"></span> */}
             Creative Engineer
           </span>
 
