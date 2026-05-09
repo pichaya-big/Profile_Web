@@ -14,7 +14,7 @@ export default function Footer() {
 
           {/* Brand */}
           <a href="#hero" className="font-display font-semibold text-lg text-primary tracking-wide hover:opacity-75 transition-opacity">
-            Alex<span className="text-secondary">.</span>
+            Pichaya<span className="text-secondary">.</span>
           </a>
 
           {/* Nav */}
@@ -57,7 +57,7 @@ export default function Footer() {
         {/* Divider + Copyright */}
         <div className="mt-8 pt-6 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-sans text-xs text-on-surface-variant">
-            © {year} Alex Morgan. All rights reserved.
+            © {year} Pichaya Santhuenkaew. All rights reserved.
           </p>
           <p className="font-sans text-xs text-on-surface-variant">
             Built with{' '}

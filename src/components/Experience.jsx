@@ -102,7 +102,7 @@ export default function Experience() {
 
                 {/* Card — alternate sides on desktop */}
                 <div
-                  className={`glass rounded-xl p-glass hover:shadow-glass-lg hover:scale-[1.01] transition-all duration-300 ${
+                  className={`glass rounded-xl p-glass hover:shadow-glass-lg hover:scale-[1.01] transition-[transform,box-shadow] duration-300 will-change-transform ${
                     idx % 2 !== 0 ? 'lg:col-start-2' : ''
                   }`}
                 >
@@ -141,9 +141,9 @@ export default function Experience() {
 
                   {/* Highlights */}
                   <ul className="flex flex-col gap-2">
-                    {exp.highlights.map((h, i) => (
+                    {exp.highlights.map((h) => (
                       <li
-                        key={i}
+                        key={h}
                         className="flex gap-2 text-sm text-on-surface-variant font-sans leading-relaxed"
                       >
                         <span

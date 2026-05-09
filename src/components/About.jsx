@@ -29,7 +29,7 @@ export default function About() {
         {/* Heading */}
         <SectionHeading
           eyebrow="About Me"
-          title="Hello, I'm Alex."
+          title="Hello, I'm Pichaya."
           subtitle="A full-stack engineer turned design-system architect. I build the things that live between
           the API response and the user's smile — responsive interfaces, component libraries, and
           the invisible glue that makes software feel effortless."
@@ -40,7 +40,7 @@ export default function About() {
           {BIO_STATS.map(({ value, label }) => (
             <div
               key={label}
-              className="glass rounded-xl p-8 flex flex-col gap-1 hover:bg-white/60 transition-all duration-300 group"
+              className="glass rounded-xl p-8 flex flex-col gap-1 hover:bg-white/60 transition-[transform,box-shadow,background-color] duration-300 will-change-transform group"
             >
               <span className="font-display font-light text-4xl text-gradient">{value}</span>
               <span className="label-caps text-on-surface-variant group-hover:text-primary transition-colors">{label}</span>
@@ -57,7 +57,7 @@ export default function About() {
             {PASSIONS.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="glass rounded-xl p-glass flex gap-4 items-start hover:scale-[1.02] hover:shadow-glass-lg transition-all duration-300"
+                className="glass rounded-xl p-glass flex gap-4 items-start hover:scale-[1.02] hover:shadow-glass-lg transition-[transform,box-shadow] duration-300 will-change-transform"
               >
                 <div className="shrink-0 w-10 h-10 rounded-md flex items-center justify-center bg-primary/10">
                   <Icon size={18} className="text-primary" />

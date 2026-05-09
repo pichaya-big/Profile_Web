@@ -1,14 +1,15 @@
+import PropTypes from 'prop-types';
+
 /**
  * SectionHeading
  * Reusable section title with label-caps eyebrow + h2 headline.
- *
- * Props:
- *  - eyebrow  {string}  — uppercase small label above the heading
- *  - title    {string}  — main heading text
- *  - subtitle {string}  — optional body paragraph beneath
- *  - center   {boolean} — center align (default: left)
  */
-export default function SectionHeading({ eyebrow, title, subtitle, center = false }) {
+export default function SectionHeading({
+  eyebrow,
+  title,
+  subtitle,
+  center = false,
+}) {
   const align = center ? 'text-center items-center' : 'text-left items-start';
 
   return (
@@ -20,9 +21,11 @@ export default function SectionHeading({ eyebrow, title, subtitle, center = fals
           <span className="w-5 h-px bg-primary" />
         </span>
       )}
+
       <h2 className="font-display font-normal text-h2 text-on-surface leading-[1.3] tracking-wide">
         {title}
       </h2>
+
       {subtitle && (
         <p className="font-sans text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
           {subtitle}
@@ -31,3 +34,10 @@ export default function SectionHeading({ eyebrow, title, subtitle, center = fals
     </div>
   );
 }
+
+SectionHeading.propTypes = {
+  eyebrow: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  center: PropTypes.bool,
+};

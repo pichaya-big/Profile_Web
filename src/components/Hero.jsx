@@ -9,29 +9,41 @@ import { GitBranch, Globe, Mail, ArrowDown } from 'lucide-react';
 export default function Hero() {
   const heroRef = useRef(null);
 
-  // Parallax tilt effect on mousemove
+  // Parallax tilt effect on mousemove — rAF-throttled to avoid per-event repaints
   useEffect(() => {
     const el = heroRef.current;
     if (!el) return;
 
+    el.style.willChange = 'transform';
+    let rafId = null;
+    let latestX = 0, latestY = 0;
+
     const handleMove = (e) => {
-      const { clientX, clientY } = e;
-      const cx = window.innerWidth / 2;
-      const cy = window.innerHeight / 2;
-      const dx = (clientX - cx) / cx;
-      const dy = (clientY - cy) / cy;
-      el.style.transform = `perspective(800px) rotateY(${dx * 2}deg) rotateX(${-dy * 2}deg)`;
+      latestX = e.clientX;
+      latestY = e.clientY;
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const cx = globalThis.innerWidth / 2;
+        const cy = globalThis.innerHeight / 2;
+        const dx = (latestX - cx) / cx;
+        const dy = (latestY - cy) / cy;
+        el.style.transform = `perspective(800px) rotateY(${dx * 2}deg) rotateX(${-dy * 2}deg)`;
+        rafId = null;
+      });
     };
 
     const handleLeave = () => {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
       el.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
     };
 
-    window.addEventListener('mousemove', handleMove);
-    window.addEventListener('mouseleave', handleLeave);
+    globalThis.addEventListener('mousemove', handleMove, { passive: true });
+    globalThis.addEventListener('mouseleave', handleLeave);
     return () => {
-      window.removeEventListener('mousemove', handleMove);
-      window.removeEventListener('mouseleave', handleLeave);
+      globalThis.removeEventListener('mousemove', handleMove);
+      globalThis.removeEventListener('mouseleave', handleLeave);
+      if (rafId) cancelAnimationFrame(rafId);
+      el.style.willChange = 'auto';
     };
   }, []);
 
@@ -46,7 +58,7 @@ export default function Hero() {
         <div className="flex flex-col gap-6 animate-fade-up">
           {/* Label */}
           <span className="label-caps text-primary inline-flex items-center gap-2">
-            <span className="w-6 h-px bg-primary" />
+            <span className="w-6 h-px bg-primary" aria-hidden="true"></span>
             Creative Engineer
           </span>
 
@@ -96,7 +108,7 @@ export default function Hero() {
                 aria-label={label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full glass text-on-surface-variant hover:text-primary hover:scale-110 transition-all duration-200"
+                className="w-10 h-10 flex items-center justify-center rounded-full glass text-on-surface-variant hover:text-primary hover:scale-110 transition-[transform,color] duration-200 will-change-transform"
               >
                 <Icon size={18} />
               </a>

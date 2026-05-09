@@ -16,7 +16,7 @@ function Chip({ label }) {
  */
 function SkillCategory({ title, color, skills, icon }) {
   return (
-    <div className="glass rounded-xl p-glass flex flex-col gap-5 hover:shadow-glass-lg hover:scale-[1.01] transition-all duration-300">
+    <div className="glass rounded-xl p-glass flex flex-col gap-5 hover:shadow-glass-lg hover:scale-[1.01] transition-[transform,box-shadow] duration-300 will-change-transform">
       <div className="flex items-center gap-3">
         <div
           className="w-8 h-8 rounded-md flex items-center justify-center text-white text-base font-bold"

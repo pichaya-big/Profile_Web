@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ExternalLink, GitBranch } from 'lucide-react';
 import SectionHeading from './SectionHeading';
+import PropTypes from 'prop-types';
 
 const FILTERS = ['All', 'Frontend', 'Full-Stack', 'Design', 'Open Source'];
 
@@ -92,7 +93,7 @@ function ProjectCard({ id, title, category, tags, description, color, accent, gi
   return (
     <article
       id={id}
-      className="glass rounded-xl overflow-hidden hover:shadow-glass-lg hover:scale-[1.02] transition-all duration-300 flex flex-col group"
+      className="glass rounded-xl overflow-hidden hover:shadow-glass-lg hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col group"
     >
       {/* Color band */}
       <div className={`h-1.5 bg-gradient-to-r ${color}`} />
@@ -153,6 +154,18 @@ function ProjectCard({ id, title, category, tags, description, color, accent, gi
     </article>
   );
 }
+
+ProjectCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  accent: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  live: PropTypes.string.isRequired,
+};
 
 /**
  * Projects Section

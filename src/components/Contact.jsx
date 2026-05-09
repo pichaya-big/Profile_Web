@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, GitBranch, Globe, Share2 } from 'lucide-react';
+import PropTypes from 'prop-types';
 import SectionHeading from './SectionHeading';
 
 const SOCIAL_LINKS = [
@@ -36,20 +37,32 @@ function GlassInput({ id, label, type = 'text', as = 'input', ...props }) {
   );
 }
 
+GlassInput.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  as: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType,
+  ]),
+};
+
+
 /**
  * Contact Section
  */
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
+  const sentTimerRef = useRef(null);
 
   const handleChange = (e) => setForm({ ...form, [e.target.id]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In production, integrate with an email API (Resend, SendGrid, etc.)
     setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    clearTimeout(sentTimerRef.current);
+    sentTimerRef.current = setTimeout(() => setSent(false), 4000);
     setForm({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -73,7 +86,7 @@ export default function Contact() {
               { icon: Phone,   text: '+1 (555) 000-0000',   label: 'Phone' },
               { icon: MapPin,  text: 'San Francisco, CA',   label: 'Location' },
             ].map(({ icon: Icon, text, label }) => (
-              <div key={label} className="glass rounded-xl p-6 flex items-center gap-4 hover:scale-[1.02] transition-all duration-300">
+              <div key={label} className="glass rounded-xl p-6 flex items-center gap-4 hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform">
                 <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
                   <Icon size={18} className="text-primary" />
                 </div>
@@ -95,7 +108,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-10 h-10 rounded-full glass flex items-center justify-center text-on-surface-variant hover:text-primary hover:scale-110 transition-all duration-200"
+                    className="w-10 h-10 rounded-full glass flex items-center justify-center text-on-surface-variant hover:text-primary hover:scale-110 transition-[transform,color] duration-200 will-change-transform"
                   >
                     <Icon size={18} />
                   </a>

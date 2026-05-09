@@ -25,14 +25,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href) => {
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
     setActive(href);
     setMenuOpen(false);
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 ${
         scrolled ? 'glass-nav' : 'bg-transparent'
       }`}
     >
@@ -45,9 +50,9 @@ export default function Navbar() {
         <a
           href="#hero"
           className="font-display font-semibold text-lg text-primary tracking-wide hover:opacity-75 transition-opacity"
-          onClick={() => handleNavClick('#hero')}
+          onClick={(e) => handleNavClick(e, '#hero')}
         >
-          Alex<span className="text-secondary">.</span>
+          Pichaya<span className="text-secondary">.</span>
         </a>
 
         {/* Desktop links */}
@@ -56,7 +61,7 @@ export default function Navbar() {
             <li key={href}>
               <a
                 href={href}
-                onClick={() => handleNavClick(href)}
+                onClick={(e) => handleNavClick(e, href)}
                 className={`label-caps transition-colors duration-200 hover:text-primary ${
                   active === href ? 'text-primary' : 'text-on-surface-variant'
                 }`}
@@ -100,7 +105,7 @@ export default function Navbar() {
             <li key={href}>
               <a
                 href={href}
-                onClick={() => handleNavClick(href)}
+                onClick={(e) => handleNavClick(e, href)}
                 className="label-caps text-on-surface-variant hover:text-primary transition-colors"
               >
                 {label}

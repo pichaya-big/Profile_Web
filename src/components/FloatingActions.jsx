@@ -16,7 +16,7 @@ export default function FloatingActions() {
     >
       {/* Expanded mini-fabs */}
       <div
-        className={`flex flex-col items-end gap-3 transition-all duration-300 ${
+        className={`flex flex-col items-end gap-3 transition-[opacity,transform] duration-300 ${
           expanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
       >
@@ -24,7 +24,7 @@ export default function FloatingActions() {
           href="#contact"
           onClick={() => setExpanded(false)}
           id="fab-contact"
-          className="flex items-center gap-2 px-4 py-2.5 rounded-full glass-strong hover:bg-white/70 transition-all duration-200 text-sm font-sans font-medium text-primary shadow-glass"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-full glass-strong hover:bg-white/70 transition-[background-color] duration-200 text-sm font-sans font-medium text-primary shadow-glass"
         >
           <MessageCircle size={15} />
           Contact Me
@@ -34,7 +34,7 @@ export default function FloatingActions() {
           target="_blank"
           rel="noopener noreferrer"
           id="fab-resume"
-          className="flex items-center gap-2 px-4 py-2.5 rounded-full glass-strong hover:bg-white/70 transition-all duration-200 text-sm font-sans font-medium text-secondary shadow-glass"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-full glass-strong hover:bg-white/70 transition-[background-color] duration-200 text-sm font-sans font-medium text-secondary shadow-glass"
         >
           <FileText size={15} />
           Resume
@@ -47,7 +47,7 @@ export default function FloatingActions() {
         onClick={() => setExpanded(!expanded)}
         aria-expanded={expanded}
         aria-label={expanded ? 'Close quick actions' : 'Open quick actions'}
-        className="w-14 h-14 rounded-full glass-strong flex items-center justify-center text-primary shadow-glass-lg hover:scale-110 transition-all duration-200"
+        className="w-14 h-14 rounded-full glass-strong flex items-center justify-center text-primary shadow-glass-lg hover:scale-110 transition-transform duration-200 will-change-transform"
       >
         <span
           className={`transition-transform duration-300 ${expanded ? 'rotate-180' : 'rotate-0'}`}
