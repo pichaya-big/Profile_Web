@@ -5,7 +5,7 @@ const BIO_STATS = [
   { value: '5+',  label: 'Years Experience' },
   { value: '40+', label: 'Projects Shipped' },
   { value: '15+', label: 'Happy Clients' },
-  { value: '3',   label: 'Open Source Libs' },
+  // { value: '3',   label: 'Open Source Libs' },
 ];
 
 const PASSIONS = [
@@ -36,7 +36,7 @@ export default function About() {
         />
 
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {BIO_STATS.map(({ value, label }) => (
             <div
               key={label}
