@@ -10,7 +10,6 @@ on:
 permissions:
   contents: write
 
-
 jobs: 
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -31,10 +30,10 @@ jobs:
       - name: Build Project
         run: npm run build
       
-      # --- CD (Continous Deployment ) ---
+      # --- CD (Continuous Deployment) ---
       - name: Upload to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # นำโฟลเดอร์ dist ที่ถูกสร้างขึ้นจากการ build ไปไว้ใน Github Pages
+          publish_dir: ./dist # นำโฟลเดอร์ dist ที่ถูกสร้างขึ้นไปไว้ใน Github Pages
           cname: pichaya.dev
