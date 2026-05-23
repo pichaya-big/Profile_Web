@@ -5,8 +5,8 @@ const EXPERIENCES = [
   {
     id: 'exp-1',
     role: 'Senior Frontend Engineer',
-    company: 'Vercel',
-    period: '2023 – Present',
+    company: 'BAAC',
+    period: '2026 – Present',
     location: 'Remote',
     type: 'Full-time',
     color: '#1c648e',
@@ -17,48 +17,48 @@ const EXPERIENCES = [
       'Shipped 3 major feature launches with zero P0 incidents.',
     ],
   },
-  {
-    id: 'exp-2',
-    role: 'UI/UX Engineer',
-    company: 'Stripe',
-    period: '2021 – 2023',
-    location: 'San Francisco, CA',
-    type: 'Full-time',
-    color: '#67558c',
-    highlights: [
-      'Designed and built the Stripe Elements redesign (used by 4M+ developers).',
-      'Established the "Motion Budget" accessibility standard for animations.',
-      'Collaborated with Research to run 30+ usability studies.',
-      'Built an internal a11y audit CLI tool adopted company-wide.',
-    ],
-  },
-  {
-    id: 'exp-3',
-    role: 'Frontend Developer',
-    company: 'Notion',
-    period: '2019 – 2021',
-    location: 'Remote',
-    type: 'Full-time',
-    color: '#006e20',
-    highlights: [
-      'Contributed core editor performance improvements (20ms → 4ms render time).',
-      'Built the public API explorer and code embed experience.',
-      'Shipped the i18n infrastructure for 15 language localizations.',
-    ],
-  },
-  {
-    id: 'exp-4',
-    role: 'Design Engineer Intern',
-    company: 'Figma',
-    period: 'Summer 2018',
-    location: 'San Francisco, CA',
-    type: 'Internship',
-    color: '#1c648e',
-    highlights: [
-      'Prototyped the initial "Interactive Components" feature concept.',
-      'Built 3 internal tooling utilities still in use by the design team.',
-    ],
-  },
+  // {
+  //   id: 'exp-2',
+  //   role: 'UI/UX Engineer',
+  //   company: 'Stripe',
+  //   period: '2021 – 2023',
+  //   location: 'San Francisco, CA',
+  //   type: 'Full-time',
+  //   color: '#67558c',
+  //   highlights: [
+  //     'Designed and built the Stripe Elements redesign (used by 4M+ developers).',
+  //     'Established the "Motion Budget" accessibility standard for animations.',
+  //     'Collaborated with Research to run 30+ usability studies.',
+  //     'Built an internal a11y audit CLI tool adopted company-wide.',
+  //   ],
+  // },
+  // {
+  //   id: 'exp-3',
+  //   role: 'Frontend Developer',
+  //   company: 'Notion',
+  //   period: '2019 – 2021',
+  //   location: 'Remote',
+  //   type: 'Full-time',
+  //   color: '#006e20',
+  //   highlights: [
+  //     'Contributed core editor performance improvements (20ms → 4ms render time).',
+  //     'Built the public API explorer and code embed experience.',
+  //     'Shipped the i18n infrastructure for 15 language localizations.',
+  //   ],
+  // },
+  // {
+  //   id: 'exp-4',
+  //   role: 'Design Engineer Intern',
+  //   company: 'Figma',
+  //   period: 'Summer 2018',
+  //   location: 'San Francisco, CA',
+  //   type: 'Internship',
+  //   color: '#1c648e',
+  //   highlights: [
+  //     'Prototyped the initial "Interactive Components" feature concept.',
+  //     'Built 3 internal tooling utilities still in use by the design team.',
+  //   ],
+  // },
 ];
 
 /**
@@ -103,7 +103,7 @@ export default function Experience() {
                 {/* Card — alternate sides on desktop */}
                 <div
                   className={`glass rounded-xl p-glass hover:shadow-glass-lg hover:scale-[1.01] transition-[transform,box-shadow] duration-300 will-change-transform ${
-                    idx % 2 !== 0 ? 'lg:col-start-2' : ''
+                    idx % 2 === 0 ? '' : 'lg:col-start-2'
                   }`}
                 >
                   {/* Header */}

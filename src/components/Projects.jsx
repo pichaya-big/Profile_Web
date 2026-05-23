@@ -33,19 +33,6 @@ const PROJECTS = [
     featured: true,
   },
   {
-    id: 'proj-3',
-    title: 'GlassUI Library',
-    category: 'Open Source',
-    tags: ['React', 'Tailwind', 'TypeScript', 'Rollup'],
-    description:
-      'An open-source glassmorphism component library with 50+ accessible components and 4k weekly npm downloads.',
-    color: 'from-[#93f993] to-[#cae6ff]',
-    accent: '#006e20',
-    github: 'https://github.com',
-    live: 'https://example.com',
-    featured: false,
-  },
-  {
     id: 'proj-4',
     title: 'NovaBlog CMS',
     category: 'Full-Stack',

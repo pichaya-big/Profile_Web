@@ -64,17 +64,15 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="font-display font-light text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.2] tracking-wider text-on-surface">
-            Crafting{' '}
-            <span className="text-gradient font-medium">Digital</span>
+            Full-Stack{' '}
+            <span className="text-gradient font-medium">AI &</span>
             <br />
-            Experiences
+            Cloud Engineer
           </h1>
 
           {/* Subtitle */}
           <p className="font-sans text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
-            Full-stack developer & UI designer passionate about building products
-            that live at the intersection of <em>technical excellence</em> and{' '}
-            <em>beautiful design</em>.
+            Bridging the gap between intelligent AI systems, robust web applications, and scalable cloud infrastructure. I design and build secure, integrated solutions from custom multi agent networks to seamless messaging platform integrations that drive organizational efficiency.
           </p>
 
           {/* CTA Buttons */}
@@ -98,7 +96,7 @@ export default function Hero() {
           {/* Social Links */}
           <div className="flex gap-4 pt-2">
             {[
-              { icon: GitBranch, href: 'https://github.com', label: 'GitHub' },
+              { icon: GitBranch, href: 'https://github.com/pichaya-big', label: 'GitHub' },
               { icon: Globe, href: 'https://linkedin.com', label: 'LinkedIn' },
               { icon: Mail, href: 'mailto:alex@example.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (

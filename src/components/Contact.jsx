@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import SectionHeading from './SectionHeading';
 
 const SOCIAL_LINKS = [
-  { icon: GitBranch, href: 'https://github.com',   label: 'GitHub' },
+  { icon: GitBranch, href: 'https://github.com/pichaya-big',   label: 'GitHub' },
   { icon: Globe,     href: 'https://linkedin.com', label: 'LinkedIn' },
   { icon: Share2,    href: 'https://twitter.com',  label: 'Twitter' },
 ];
@@ -59,6 +59,7 @@ export default function Contact() {
   const handleChange = (e) => setForm({ ...form, [e.target.id]: e.target.value });
 
   const handleSubmit = (e) => {
+    alert("Not yed activated. Please contact me via email for now. Thanks!");
     e.preventDefault();
     setSent(true);
     clearTimeout(sentTimerRef.current);
@@ -82,9 +83,9 @@ export default function Contact() {
           {/* Left — contact details */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             {[
-              { icon: Mail,    text: 'alex@example.com',    label: 'Email' },
-              { icon: Phone,   text: '+1 (555) 000-0000',   label: 'Phone' },
-              { icon: MapPin,  text: 'San Francisco, CA',   label: 'Location' },
+              { icon: Mail,    text: 'pichayasanthuenkaew@gmail.com',    label: 'Email' },
+              { icon: Phone,   text: '+66 62 389 4070',   label: 'Phone' },
+              { icon: MapPin,  text: 'Nan, Thailand',   label: 'Location' },
             ].map(({ icon: Icon, text, label }) => (
               <div key={label} className="glass rounded-xl p-6 flex items-center gap-4 hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform">
                 <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0">

@@ -1,20 +1,20 @@
 import SectionHeading from './SectionHeading';
-import { Code2, Palette, Layers, Cpu, Database, Globe } from 'lucide-react';
+import { Code2, Brain, Cloud, Server, MessageSquare, ShieldCheck } from 'lucide-react';
 
 const BIO_STATS = [
-  { value: '5+',  label: 'Years Experience' },
-  { value: '40+', label: 'Projects Shipped' },
+  { value: '1+', label: 'Years Experience' },
+  { value: '5+', label: 'Projects Shipped' },
   { value: '15+', label: 'Happy Clients' },
   // { value: '3',   label: 'Open Source Libs' },
 ];
 
 const PASSIONS = [
-  { icon: Code2,    title: 'Clean Code',     desc: 'Obsessed with readable, maintainable architecture.' },
-  { icon: Palette,  title: 'Design Systems', desc: 'Building scalable, consistent visual languages.' },
-  { icon: Layers,   title: 'Performance',    desc: 'Squeezing every millisecond out of the critical path.' },
-  { icon: Cpu,      title: 'AI Integration', desc: 'Weaving intelligence into everyday user flows.' },
-  { icon: Database, title: 'Data Pipelines', desc: 'ETL, streaming, and making data products people love.' },
-  { icon: Globe,    title: 'Web Standards',  desc: 'A11y, SEO, and the open web as a first-class concern.' },
+  { icon: Brain, title: 'AI Architectures', desc: 'Orchestrating custom multi-agent systems and specialized knowledge bots.' },
+  { icon: Code2, title: 'Full-Stack Web', desc: 'Building end-to-end, responsive applications with seamless user experiences.' },
+  { icon: Cloud, title: 'Cloud Solutions', desc: 'Deploying scalable and reliable environments to power intensive workloads.' },
+  { icon: Server, title: 'Infrastructure', desc: 'Designing robust foundational architectures and automated deployment pipelines.' },
+  { icon: MessageSquare, title: 'Seamless Integration', desc: 'Connecting intelligent systems into platforms like LINE for frictionless workflows.' },
+  { icon: ShieldCheck, title: 'Secure Engineering', desc: 'Protecting codebases with strict access controls and secure repository management.' },
 ];
 
 /**
@@ -30,9 +30,7 @@ export default function About() {
         <SectionHeading
           eyebrow="About Me"
           title="Hello, I'm Pichaya."
-          subtitle="A full-stack engineer turned design-system architect. I build the things that live between
-          the API response and the user's smile — responsive interfaces, component libraries, and
-          the invisible glue that makes software feel effortless."
+          subtitle="I am a versatile software engineer passionate about transforming complex business challenges into streamlined technological solutions. By combining my expertise in Artificial Intelligence, Full-Stack Web Development, and Cloud Infrastructure, I oversee the entire software lifecycle. Whether it is building intelligent systems that can process specialized organizational knowledge or deploying them securely to the web, I focus on delivering scalable and practical results."
         />
 
         {/* Stats row */}

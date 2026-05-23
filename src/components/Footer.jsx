@@ -36,9 +36,9 @@ export default function Footer() {
           {/* Socials */}
           <div className="flex gap-3">
             {[
-              { icon: GitBranch, href: 'https://github.com',   label: 'GitHub' },
+              { icon: GitBranch, href: 'https://github.com/pichaya-big',   label: 'GitHub' },
               { icon: Globe,     href: 'https://linkedin.com', label: 'LinkedIn' },
-              { icon: Mail,      href: 'mailto:alex@example.com', label: 'Email' },
+              { icon: Mail,      href: 'mailto:pichayasanthuenkaew@gmail.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
