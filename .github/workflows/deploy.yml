@@ -1,12 +1,10 @@
 name: Deploy Web Profile
 
-# กำหนดให้ CI/CD ทำงานเมื่อมีการ push โค้ดเข้า branch 'main'
 on:
   push:
     branches:
       - main
 
-# ให้สิทธิ์ Github Actions ในการเข้าถึง Github Pages
 permissions:
   contents: write
 
@@ -15,14 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # --- ส่วนของ CI (Continuous Integration) ---
       - name: ดึงโค้ดล่าสุดจาก repository
         uses: actions/checkout@v4
 
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Node version 20
+          node-version: '20'
 
       - name: Install Dependencies
         run: npm install
@@ -30,10 +27,9 @@ jobs:
       - name: Build Project
         run: npm run build
       
-      # --- CD (Continuous Deployment) ---
       - name: Upload to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # นำโฟลเดอร์ dist ที่ถูกสร้างขึ้นไปไว้ใน Github Pages
+          publish_dir: ./dist
           cname: pichaya.dev
