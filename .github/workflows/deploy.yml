@@ -36,5 +36,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # นำโฟลเดอร์ dist ที่ถูกสร้างขึ้นจากการ build ไปไว้ใน Github Pages`
+          publish_dir: ./dist # นำโฟลเดอร์ dist ที่ถูกสร้างขึ้นจากการ build ไปไว้ใน Github Pages
           cname: pichaya.dev
