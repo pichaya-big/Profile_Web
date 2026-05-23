@@ -129,7 +129,7 @@ export default function Hero() {
               {/* Avatar initials fallback */}
               <div className="w-full h-full rounded-full bg-gradient-to-br from-[#cae6ff] to-[#d5bffe] flex items-center justify-center">
                 <span className="font-display font-light text-5xl text-primary/80 tracking-wider select-none">
-                  AM
+                  PS
                 </span>
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function Hero() {
 
             {/* Floating badge 2 */}
             <div className="absolute -top-2 -right-4 px-4 py-2 rounded-full glass animate-float shadow-glass" style={{ animationDelay: '2s' }}>
-              <span className="label-caps text-secondary text-[0.65rem]">5+ Years Exp</span>
+              <span className="label-caps text-secondary text-[0.65rem]">1+ Years Exp</span>
             </div>
           </div>
         </div>

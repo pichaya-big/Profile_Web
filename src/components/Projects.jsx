@@ -204,7 +204,7 @@ export default function Projects() {
         {/* CTA */}
         <div className="flex justify-center pt-4">
           <a
-            href="https://github.com"
+            href="https://github.com/pichaya-big"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3 rounded font-sans font-medium text-sm text-primary glass hover:bg-white/60 transition-all duration-200"
