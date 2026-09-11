@@ -1,13 +1,9 @@
-import { useState, useRef } from 'react';
-import { Mail, Phone, MapPin, Send, GitBranch, Globe, Share2 } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import PropTypes from 'prop-types';
 import SectionHeading from './SectionHeading';
+import { SOCIAL_PROFILES } from './SocialIcons';
 
-const SOCIAL_LINKS = [
-  { icon: GitBranch, href: 'https://github.com/pichaya-big',   label: 'GitHub' },
-  { icon: Globe,     href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Share2,    href: 'https://twitter.com',  label: 'Twitter' },
-];
 
 /**
  * GlassInput — minimal glass input with glow-on-focus
@@ -39,12 +35,12 @@ function GlassInput({ id, label, type = 'text', as = 'input', ...props }) {
 
 GlassInput.propTypes = {
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
   type: PropTypes.string,
   as: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.elementType,
   ]),
+  label: PropTypes.string.isRequired,
 };
 
 
@@ -52,7 +48,7 @@ GlassInput.propTypes = {
  * Contact Section
  */
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [form, setForm] = useState({ email: '', message: '', name: '', subject: '' });
   const [sent, setSent] = useState(false);
   const sentTimerRef = useRef(null);
 
@@ -64,7 +60,7 @@ export default function Contact() {
     setSent(true);
     clearTimeout(sentTimerRef.current);
     sentTimerRef.current = setTimeout(() => setSent(false), 4000);
-    setForm({ name: '', email: '', subject: '', message: '' });
+    setForm({ email: '', message: '', name: '', subject: '' });
   };
 
   return (
@@ -83,9 +79,9 @@ export default function Contact() {
           {/* Left — contact details */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             {[
-              { icon: Mail,    text: 'pichayasanthuenkaew@gmail.com',    label: 'Email' },
-              { icon: Phone,   text: '+66 62 389 4070',   label: 'Phone' },
-              { icon: MapPin,  text: 'Nan, Thailand',   label: 'Location' },
+              { icon: Mail, label: 'Email', text: 'pichayasanthuenkaew@gmail.com' },
+              { icon: Phone, label: 'Phone', text: '+66 62 389 4070' },
+              { icon: MapPin, label: 'Location', text: 'Bangkok, Thailand' },
             ].map(({ icon: Icon, text, label }) => (
               <div key={label} className="glass rounded-xl p-6 flex items-center gap-4 hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform">
                 <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
@@ -101,17 +97,18 @@ export default function Contact() {
             {/* Socials */}
             <div className="glass rounded-xl p-6">
               <p className="label-caps text-on-surface-variant text-[0.65rem] mb-4">Find Me Online</p>
-              <div className="flex gap-3">
-                {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
+              <div className="flex flex-wrap gap-3">
+                {SOCIAL_PROFILES.map(({ name, icon: Icon, href, hoverClass }) => (
                   <a
-                    key={label}
+                    key={name}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={label}
-                    className="w-10 h-10 rounded-full glass flex items-center justify-center text-on-surface-variant hover:text-primary hover:scale-110 transition-[transform,color] duration-200 will-change-transform"
+                    aria-label={name}
+                    title={name}
+                    className={`w-11 h-11 rounded-full glass flex items-center justify-center text-on-surface-variant ${hoverClass} hover:scale-110 hover:shadow-glass transition-all duration-200 will-change-transform`}
                   >
-                    <Icon size={18} />
+                    <Icon size={20} />
                   </a>
                 ))}
               </div>

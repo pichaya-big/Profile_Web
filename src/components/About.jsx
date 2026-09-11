@@ -1,20 +1,20 @@
 import SectionHeading from './SectionHeading';
-import { Code2, Brain, Cloud, Server, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Brain, Cloud, Code2, MessageSquare, Server, ShieldCheck } from 'lucide-react';
 
 const BIO_STATS = [
-  { value: '1+', label: 'Years Experience' },
-  { value: '5+', label: 'Projects Shipped' },
-  { value: '15+', label: 'Happy Clients' },
+  { label: 'Years Experience', value: '1+' },
+  { label: 'Projects Shipped', value: '5+' },
+  { label: 'Happy Clients', value: '15+' },
   // { value: '3',   label: 'Open Source Libs' },
 ];
 
 const PASSIONS = [
-  { icon: Brain, title: 'AI Architectures', desc: 'Orchestrating custom multi-agent systems and specialized knowledge bots.' },
-  { icon: Code2, title: 'Full-Stack Web', desc: 'Building end-to-end, responsive applications with seamless user experiences.' },
-  { icon: Cloud, title: 'Cloud Solutions', desc: 'Deploying scalable and reliable environments to power intensive workloads.' },
-  { icon: Server, title: 'Infrastructure', desc: 'Designing robust foundational architectures and automated deployment pipelines.' },
-  { icon: MessageSquare, title: 'Seamless Integration', desc: 'Connecting intelligent systems into platforms like LINE for frictionless workflows.' },
-  { icon: ShieldCheck, title: 'Secure Engineering', desc: 'Protecting codebases with strict access controls and secure repository management.' },
+  { desc: 'Orchestrating custom multi-agent systems and specialized knowledge bots.', icon: Brain, title: 'AI Architectures' },
+  { desc: 'Building end-to-end, responsive applications with seamless user experiences.', icon: Code2, title: 'Full-Stack Web' },
+  { desc: 'Deploying scalable and reliable environments to power intensive workloads.', icon: Cloud, title: 'Cloud Solutions' },
+  { desc: 'Designing robust foundational architectures and automated deployment pipelines.', icon: Server, title: 'Infrastructure' },
+  { desc: 'Connecting intelligent systems into platforms like LINE for frictionless workflows.', icon: MessageSquare, title: 'Seamless Integration' },
+  { desc: 'Protecting codebases with strict access controls and secure repository management.', icon: ShieldCheck, title: 'Secure Engineering' },
 ];
 
 /**
@@ -30,7 +30,7 @@ export default function About() {
         <SectionHeading
           eyebrow="About Me"
           title="Hello, I'm Pichaya."
-          subtitle="I am a versatile software engineer passionate about transforming complex business challenges into streamlined technological solutions. By combining my expertise in Artificial Intelligence, Full-Stack Web Development, and Cloud Infrastructure, I oversee the entire software lifecycle. Whether it is building intelligent systems that can process specialized organizational knowledge or deploying them securely to the web, I focus on delivering scalable and practical results."
+          subtitle="Dedicated to leveraging full-stack web development skills combined with expertise in CI/CD, Docker, and infrastructure management to design and deliver scalable, reliable systems that optimize performance and drive business value."
         />
 
         {/* Stats row */}

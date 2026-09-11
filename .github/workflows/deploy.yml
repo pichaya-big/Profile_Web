@@ -2,8 +2,8 @@ name: Deploy Web Profile
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 permissions:
   contents: write

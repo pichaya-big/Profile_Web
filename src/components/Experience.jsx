@@ -1,64 +1,35 @@
 import SectionHeading from './SectionHeading';
-import { MapPin, Calendar } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 
 const EXPERIENCES = [
   {
     id: 'exp-1',
-    role: 'Senior Frontend Engineer',
+    type: 'On-site',
+    color: '#1c648e',
     company: 'BAAC',
-    period: '2026 – Present',
+    highlights: [
+      'Developed and maintained internal full-stack web applications.',
+      'Designed databases, built secure RESTful APIs, and integrated core systems.',
+      'Containerized apps with Docker and configured CI/CD pipelines for deployment.',
+    ],
     location: 'Remote',
+    period: '2026 – Present',
+    role: 'Full-Stack Developer',
+  },
+  {
+    id: 'exp-2',
     type: 'Full-time',
     color: '#1c648e',
+    company: 'Academic & External Collaborations',
     highlights: [
-      'Led the re-architecture of the dashboard UI, reducing bundle size by 42%.',
-      'Defined and enforced design-token pipelines across 6 product teams.',
-      'Mentored 4 junior engineers, running weekly code review sessions.',
-      'Shipped 3 major feature launches with zero P0 incidents.',
+      'Co-developed an e-learning platform with faculty for student use.',
+      'Designed and built an informational and PR website for a community college.',
+      'Led end-to-end delivery from requirements and UI/UX to backend development and deployment.',
     ],
+    location: 'Remote',
+    period: '2022 – 2025',
+    role: 'Web Developer (Freelance & Academic Projects)',
   },
-  // {
-  //   id: 'exp-2',
-  //   role: 'UI/UX Engineer',
-  //   company: 'Stripe',
-  //   period: '2021 – 2023',
-  //   location: 'San Francisco, CA',
-  //   type: 'Full-time',
-  //   color: '#67558c',
-  //   highlights: [
-  //     'Designed and built the Stripe Elements redesign (used by 4M+ developers).',
-  //     'Established the "Motion Budget" accessibility standard for animations.',
-  //     'Collaborated with Research to run 30+ usability studies.',
-  //     'Built an internal a11y audit CLI tool adopted company-wide.',
-  //   ],
-  // },
-  // {
-  //   id: 'exp-3',
-  //   role: 'Frontend Developer',
-  //   company: 'Notion',
-  //   period: '2019 – 2021',
-  //   location: 'Remote',
-  //   type: 'Full-time',
-  //   color: '#006e20',
-  //   highlights: [
-  //     'Contributed core editor performance improvements (20ms → 4ms render time).',
-  //     'Built the public API explorer and code embed experience.',
-  //     'Shipped the i18n infrastructure for 15 language localizations.',
-  //   ],
-  // },
-  // {
-  //   id: 'exp-4',
-  //   role: 'Design Engineer Intern',
-  //   company: 'Figma',
-  //   period: 'Summer 2018',
-  //   location: 'San Francisco, CA',
-  //   type: 'Internship',
-  //   color: '#1c648e',
-  //   highlights: [
-  //     'Prototyped the initial "Interactive Components" feature concept.',
-  //     'Built 3 internal tooling utilities still in use by the design team.',
-  //   ],
-  // },
 ];
 
 /**
@@ -89,9 +60,8 @@ export default function Experience() {
               <div
                 key={exp.id}
                 id={exp.id}
-                className={`relative grid lg:grid-cols-2 gap-6 lg:gap-12 items-start ${
-                  idx % 2 === 0 ? '' : 'lg:direction-rtl'
-                }`}
+                className={`relative grid lg:grid-cols-2 gap-6 lg:gap-12 items-start ${idx % 2 === 0 ? '' : 'lg:direction-rtl'
+                  }`}
               >
                 {/* Timeline dot — desktop */}
                 <div
@@ -102,9 +72,8 @@ export default function Experience() {
 
                 {/* Card — alternate sides on desktop */}
                 <div
-                  className={`glass rounded-xl p-glass hover:shadow-glass-lg hover:scale-[1.01] transition-[transform,box-shadow] duration-300 will-change-transform ${
-                    idx % 2 === 0 ? '' : 'lg:col-start-2'
-                  }`}
+                  className={`glass rounded-xl p-glass hover:shadow-glass-lg hover:scale-[1.01] transition-[transform,box-shadow] duration-300 will-change-transform ${idx % 2 === 0 ? '' : 'lg:col-start-2'
+                    }`}
                 >
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">

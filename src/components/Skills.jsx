@@ -55,38 +55,38 @@ function ProficiencyBar({ label, level }) {
 
 const SKILL_CATEGORIES = [
   {
-    title: 'Frontend',
+    color: '#1c648e',
     icon: '⚡',
-    color: '#1c648e',
-    skills: ['React', 'Next.js', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'Web Components'],
+    skills: ['React', 'Next.js', 'TypeScript', 'Vite', 'Tailwind CSS', 'Web Components', 'Angular'],
+    title: 'Frontend',
   },
   {
-    title: 'Backend',
-    icon: '🔧',
     color: '#67558c',
-    skills: ['Node.js', 'Express', 'FastAPI', 'PostgreSQL', 'Redis', 'GraphQL', 'REST APIs', 'Prisma'],
+    icon: '🔧',
+    skills: ['Node.js', 'Express', 'FastAPI', 'PostgreSQL', 'MongoDB', 'REST APIs', 'Prisma', 'APS.NET', 'NestJS'],
+    title: 'Backend',
   },
   {
-    title: 'Design',
-    icon: '🎨',
     color: '#006e20',
-    skills: ['Figma', 'Design Systems', 'Glassmorphism', 'Motion Design', 'Prototyping', 'Accessibility'],
+    icon: '🎨',
+    skills: ['Figma', 'Design Systems', 'Glassmorphism', 'Motion Design', 'Stitch'],
+    title: 'Design',
   },
   {
-    title: 'DevOps & Cloud',
-    icon: '☁️',
     color: '#1c648e',
-    skills: ['Docker', 'Kubernetes', 'AWS', 'GCP', 'CI/CD', 'Terraform', 'Nginx', 'GitHub Actions'],
+    icon: '☁️',
+    skills: ['Docker', 'CI/CD', 'Nginx', 'GitHub Actions'],
+    title: 'DevOps & Cloud',
   },
 ];
 
 const PROFICIENCIES = [
   { label: 'React / Next.js', level: 95 },
-  { label: 'TypeScript',      level: 90 },
-  { label: 'Node.js',         level: 88 },
-  { label: 'UI/UX Design',    level: 82 },
-  { label: 'DevOps',          level: 75 },
-  { label: 'Machine Learning',level: 65 },
+  { label: 'TypeScript', level: 90 },
+  { label: 'Node.js', level: 88 },
+  { label: 'UI/UX Design', level: 82 },
+  { label: 'DevOps', level: 75 },
+  { label: 'Machine Learning', level: 90 },
 ];
 
 /**

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText, ArrowUpRight } from 'lucide-react';
 
 const NAV_LINKS = [
   { label: 'About',    href: '#about' },
@@ -72,14 +72,16 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
+        {/* Desktop CTA */}
         <a
-          href="/resume.pdf"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded font-sans font-medium text-sm text-primary glass hover:bg-white/60 transition-all duration-200"
+          href="/Resume_Pichaya.pdf"
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-lg font-sans font-medium text-sm text-primary glass hover:bg-white/70 hover:shadow-glass hover:scale-105 active:scale-95 transition-all duration-200"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Resume ↗
+          <FileText size={15} />
+          <span>Resume</span>
+          <ArrowUpRight size={14} className="opacity-70" />
         </a>
 
         {/* Mobile hamburger */}
@@ -96,30 +98,35 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden glass-strong transition-all duration-300 overflow-hidden ${
+        className={`md:hidden glass-strong border-t border-white/20 transition-all duration-300 overflow-hidden ${
           menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <ul className="px-6 py-4 flex flex-col gap-4">
+        <ul className="px-6 py-5 flex flex-col gap-4">
           {NAV_LINKS.map(({ label, href }) => (
             <li key={href}>
               <a
                 href={href}
                 onClick={(e) => handleNavClick(e, href)}
-                className="label-caps text-on-surface-variant hover:text-primary transition-colors"
+                className={`label-caps transition-colors duration-200 block py-1 hover:text-primary ${
+                  active === href ? 'text-primary' : 'text-on-surface-variant'
+                }`}
               >
                 {label}
               </a>
             </li>
           ))}
-          <li>
+          <li className="pt-2">
             <a
-              href="/resume.pdf"
-              className="label-caps text-primary"
+              href="/Resume_Pichaya.pdf"
+              className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-sans font-medium text-sm text-on-primary bg-primary hover:bg-primary/90 shadow-glow-primary active:scale-[0.98] transition-all duration-200"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
             >
-              Resume ↗
+              <FileText size={16} />
+              <span>Resume</span>
+              <ArrowUpRight size={15} className="opacity-80" />
             </a>
           </li>
         </ul>
@@ -127,3 +134,4 @@ export default function Navbar() {
     </header>
   );
 }
+

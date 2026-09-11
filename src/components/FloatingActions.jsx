@@ -30,7 +30,7 @@ export default function FloatingActions() {
           Contact Me
         </a>
         <a
-          href="/resume.pdf"
+          href="/Resume_Pichaya.pdf"
           target="_blank"
           rel="noopener noreferrer"
           id="fab-resume"

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { GitBranch, Globe, Mail, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
+import { SOCIAL_PROFILES } from './SocialIcons';
 
 /**
  * Hero Section
@@ -64,10 +65,10 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="font-display font-light text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.2] tracking-wider text-on-surface">
-            Full-Stack{' '}
-            <span className="text-gradient font-medium">AI &</span>
+            Full-
+            <span className="text-gradient font-medium">Stack </span>
             <br />
-            Cloud Engineer
+            Developer
           </h1>
 
           {/* Subtitle */}
@@ -94,19 +95,16 @@ export default function Hero() {
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-4 pt-2">
-            {[
-              { icon: GitBranch, href: 'https://github.com/pichaya-big', label: 'GitHub' },
-              { icon: Globe, href: 'https://linkedin.com', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:alex@example.com', label: 'Email' },
-            ].map(({ icon: Icon, href, label }) => (
+          <div className="flex flex-wrap gap-3 pt-2">
+            {SOCIAL_PROFILES.map(({ name, icon: Icon, href, hoverClass }) => (
               <a
-                key={label}
+                key={name}
                 href={href}
-                aria-label={label}
+                aria-label={name}
+                title={name}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full glass text-on-surface-variant hover:text-primary hover:scale-110 transition-[transform,color] duration-200 will-change-transform"
+                className={`w-10 h-10 flex items-center justify-center rounded-full glass text-on-surface-variant ${hoverClass} hover:scale-110 hover:shadow-glass transition-all duration-200 will-change-transform`}
               >
                 <Icon size={18} />
               </a>

@@ -1,4 +1,4 @@
-import { GitBranch, Globe, Mail } from 'lucide-react';
+import { SOCIAL_PROFILES } from './SocialIcons';
 
 /**
  * Footer
@@ -34,19 +34,16 @@ export default function Footer() {
           </nav>
 
           {/* Socials */}
-          <div className="flex gap-3">
-            {[
-              { icon: GitBranch, href: 'https://github.com/pichaya-big',   label: 'GitHub' },
-              { icon: Globe,     href: 'https://linkedin.com', label: 'LinkedIn' },
-              { icon: Mail,      href: 'mailto:pichayasanthuenkaew@gmail.com', label: 'Email' },
-            ].map(({ icon: Icon, href, label }) => (
+          <div className="flex flex-wrap justify-center gap-3">
+            {SOCIAL_PROFILES.map(({ name, icon: Icon, href, hoverClass }) => (
               <a
-                key={label}
+                key={name}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={label}
-                className="w-9 h-9 rounded-full glass flex items-center justify-center text-on-surface-variant hover:text-primary hover:scale-110 transition-all duration-200"
+                aria-label={name}
+                title={name}
+                className={`w-9 h-9 rounded-full glass flex items-center justify-center text-on-surface-variant ${hoverClass} hover:scale-110 hover:shadow-glass transition-all duration-200`}
               >
                 <Icon size={16} />
               </a>
