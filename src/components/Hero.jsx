@@ -65,8 +65,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="font-display font-light text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.2] tracking-wider text-on-surface">
-            Full-
-            <span className="text-gradient font-medium">Stack </span>
+            Full-<span className="text-gradient font-medium">Stack</span>
             <br />
             Developer
           </h1>

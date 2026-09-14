@@ -3,50 +3,24 @@ import { ExternalLink, GitBranch } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import PropTypes from 'prop-types';
 
-const FILTERS = ['All', 'Frontend', 'Full-Stack', 'Design', 'Open Source'];
+const FILTERS = ['All', 'Frontend', 'Full-Stack'];
 
 const PROJECTS = [
   {
     id: 'proj-1',
-    title: 'Luminary Design System',
-    category: 'Design',
-    tags: ['Figma', 'Storybook', 'React', 'Tokens'],
+    title: 'LearnVipassana | Full-Stack Developer',
+    category: 'Full-Stack',
+    tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
     description:
-      'A comprehensive design system powering 4 products with 120+ components, automated token pipelines, and a live documentation site.',
-    color: 'from-[#cae6ff] to-[#d5bffe]',
-    accent: '#1c648e',
-    github: 'https://github.com',
-    live: 'https://example.com',
+      'Developed a responsive e-learning platform providing structured online courses in Vipassana meditation, enabling remote learners to practice mindfulness systematically from anywhere.',
+    color: 'from-[#d5bffe] to-[#93f993]',
+    accent: '#67558c',
+    github: 'https://github.com/pabigmz/VipassanaWebsite',
+    live: 'https://learnvipassana.com/',
     featured: true,
   },
   {
     id: 'proj-2',
-    title: 'Aether Analytics',
-    category: 'Full-Stack',
-    tags: ['Next.js', 'PostgreSQL', 'Prisma', 'Recharts'],
-    description:
-      'Real-time business intelligence dashboard with 30+ chart types, row-level security, and sub-100ms query response times.',
-    color: 'from-[#d5bffe] to-[#93f993]',
-    accent: '#67558c',
-    github: 'https://github.com',
-    live: 'https://example.com',
-    featured: true,
-  },
-  {
-    id: 'proj-4',
-    title: 'NovaBlog CMS',
-    category: 'Full-Stack',
-    tags: ['Node.js', 'GraphQL', 'MongoDB', 'React'],
-    description:
-      'Headless CMS platform for technical writers with MDX support, AI-powered drafting, and edge-cached delivery.',
-    color: 'from-[#90cdfd] to-[#d5bffe]',
-    accent: '#1c648e',
-    github: 'https://github.com',
-    live: 'https://example.com',
-    featured: false,
-  },
-  {
-    id: 'proj-5',
     title: 'KraiJai',
     category: 'Frontend',
     tags: ['React Vite', 'Tailwind', 'TypeScript'],
@@ -59,7 +33,7 @@ const PROJECTS = [
     featured: false,
   },
   {
-    id: 'proj-6',
+    id: 'proj-3',
     title: 'Web Profile Portfolio',
     category: 'Frontend',
     tags: ['React Vite', 'Tailwind', 'TypeScript'],
